@@ -1,3 +1,4 @@
+import 'package:attendence_management/common/registration_screen.dart';
 import 'package:flutter/material.dart';
 
 class AuthScreen extends StatelessWidget {
@@ -55,7 +56,12 @@ class AuthScreen extends StatelessWidget {
             ),
             button(
               context,
-              () {},
+              () {
+                Navigator.pushNamed(
+                  context,
+                  RegistrationScreen.routeName,
+                );
+              },
               'SignUp',
             ),
           ],
