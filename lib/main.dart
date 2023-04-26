@@ -15,9 +15,38 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(),
+    return MaterialApp( debugShowCheckedModeBanner: false,
+      title: 'Attendence App',
+      theme: ThemeData(
+        colorScheme:
+        ColorScheme.fromSwatch(primarySwatch: Colors.lightBlue).copyWith(
+          secondary: Colors.lightBlueAccent,
+        ),
+        textTheme: ThemeData.light().textTheme.copyWith(
+          titleLarge: const TextStyle(
+            fontFamily: 'Squada',
+            fontSize: 25,
+            color: Colors.black,
+          ),
+          labelMedium: const TextStyle(
+            fontFamily: 'Comfortaa',
+            fontSize: 13,
+            color: Colors.black,
+          ),
+          bodyLarge: const TextStyle(
+            fontFamily: 'Comfortaa',
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+            color: Colors.black,
+          ),
+          bodyMedium: const TextStyle(
+            fontFamily: 'Comfortaa',
+            fontWeight: FontWeight.bold,
+            fontSize: 15,
+            color: Colors.black,
+          ),
+        ),
+      ),
     );
   }
 }
