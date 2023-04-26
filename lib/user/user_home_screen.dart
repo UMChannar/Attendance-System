@@ -1,4 +1,5 @@
 import 'package:attendence_management/auth/auth.dart';
+import 'package:attendence_management/user/user_profile_screen.dart';
 import 'package:flutter/material.dart';
 
 class UserHomeScreen extends StatelessWidget {
@@ -17,10 +18,10 @@ class UserHomeScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              // Navigator.pushNamed(
-              //   context,
-              //   UserProfileScreen.routeName,
-              // );
+              Navigator.pushNamed(
+                context,
+                ProfileScreen.routeName,
+              );
             },
             icon: const Icon(
               Icons.person,
