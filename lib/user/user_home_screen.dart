@@ -14,7 +14,28 @@ class UserHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('User Works'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              // Navigator.pushNamed(
+              //   context,
+              //   UserProfileScreen.routeName,
+              // );
+            },
+            icon: const Icon(
+              Icons.person,
+            ),
+          ),
+        ],
+        title: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            'User',
+            style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  fontSize: 30,
+                ),
+          ),
+        ),
       ),
       body: Center(
           child: ElevatedButton(

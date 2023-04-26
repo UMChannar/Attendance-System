@@ -1,4 +1,4 @@
-import 'package:attendence_management/initializing/auth_screen.dart';
+import 'package:attendence_management/initializing/is_loggedin.dart';
 import 'package:attendence_management/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
               ),
             ),
       ),
-      initialRoute: AuthScreen.routeName,
+      initialRoute: IsLoggedIn.routeName,
       routes: customRoutes,
     );
   }
