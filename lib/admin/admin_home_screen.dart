@@ -1,10 +1,10 @@
 import 'package:attendence_management/auth/auth.dart';
 import 'package:flutter/material.dart';
 
-class UserHomeScreen extends StatelessWidget {
-  static String routeName = '/userHomeScreen';
+class AdminHomeScreen extends StatelessWidget {
+  static String routeName = '/adminHomeScreen';
 
-  const UserHomeScreen({Key? key}) : super(key: key);
+  const AdminHomeScreen({Key? key}) : super(key: key);
 
   Future<void> signOut(BuildContext context) async {
     await Auth().signOut(context);
@@ -14,7 +14,7 @@ class UserHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('User Works'),
+        title: Text('Admin Works'),
       ),
       body: Center(
           child: ElevatedButton(

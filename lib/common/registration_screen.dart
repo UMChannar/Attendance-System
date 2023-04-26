@@ -1,3 +1,4 @@
+import 'package:attendence_management/common/login_screen.dart';
 import 'package:attendence_management/storage/register_user.dart';
 import 'package:flutter/material.dart';
 
@@ -328,11 +329,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       ),
                       TextButton(
                         onPressed: () {
-                          // Navigator.pushNamedAndRemoveUntil(
-                          //   context,
-                          //   LoginScreen.routeName,
-                          //   (route) => false,
-                          // );
+                          Navigator.pushNamedAndRemoveUntil(
+                            context,
+                            LoginScreen.routeName,
+                            (route) => false,
+                          );
                         },
                         child: Text(
                           'Login',
