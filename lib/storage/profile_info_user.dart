@@ -48,7 +48,10 @@ FutureBuilder<DocumentSnapshot<Map<String, dynamic>>> profileInfo() {
           }
 
           return snapshot.hasData
-              ? newMethod(snapshot.data!)
+              ? newMethod(
+                  snapshot.data!,
+                  context,
+                )
               : const Center(
                   child: Text('Error: Could not load profile.'),
                 );
@@ -58,23 +61,96 @@ FutureBuilder<DocumentSnapshot<Map<String, dynamic>>> profileInfo() {
   );
 }
 
-Widget newMethod(ProfileInfo profileInfo) {
+Widget newMethod(ProfileInfo profileInfo, BuildContext context) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       Text(
-        'Name: ${profileInfo.name}',
-        style: const TextStyle(fontSize: 20),
+        'Name',
+        style: Theme.of(context)
+            .textTheme
+            .bodyLarge!
+            .copyWith(fontWeight: FontWeight.bold),
       ),
-      const SizedBox(height: 10),
-      Text(
-        'Class: ${profileInfo.className}',
-        style: const TextStyle(fontSize: 20),
+      TextField(
+        enabled: false,
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.grey,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(
+              color: Colors.black,
+            ),
+          ),
+          label: Text(
+            profileInfo.name,
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
+          ),
+        ),
       ),
-      const SizedBox(height: 10),
+      const SizedBox(
+        height: 10,
+      ),
       Text(
-        'Roll No: ${profileInfo.rollNo}',
-        style: const TextStyle(fontSize: 20),
+        'Class',
+        style: Theme.of(context)
+            .textTheme
+            .bodyLarge!
+            .copyWith(fontWeight: FontWeight.bold),
+      ),
+      TextField(
+        enabled: false,
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.grey,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(
+              color: Colors.black,
+            ),
+          ),
+          label: Text(
+            profileInfo.className,
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
+          ),
+        ),
+      ),
+      const SizedBox(
+        height: 10,
+      ),
+      Text(
+        'Roll No',
+        style: Theme.of(context)
+            .textTheme
+            .bodyLarge!
+            .copyWith(fontWeight: FontWeight.bold),
+      ),
+      TextField(
+        enabled: false,
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.grey,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(
+              color: Colors.black,
+            ),
+          ),
+          label: Text(
+            profileInfo.rollNo,
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
+          ),
+        ),
+      ),
+      const SizedBox(
+        height: 10,
       ),
     ],
   );

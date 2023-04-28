@@ -39,12 +39,13 @@ class UserHomeScreen extends StatelessWidget {
         ),
       ),
       body: Center(
-          child: ElevatedButton(
-        onPressed: () {
-          signOut(context);
-        },
-        child: Text('SignOut'),
-      )),
+        child: ElevatedButton(
+          onPressed: () {
+            signOut(context);
+          },
+          child: Text('SignOut'),
+        ),
+      ),
     );
   }
 }
