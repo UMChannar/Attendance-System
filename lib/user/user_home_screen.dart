@@ -1,4 +1,5 @@
 import 'package:attendence_management/auth/auth.dart';
+import 'package:attendence_management/storage/apply_for_leave_user.dart';
 import 'package:attendence_management/storage/mark_attendance_user.dart';
 import 'package:attendence_management/user/user_attendance_view_screen.dart';
 import 'package:attendence_management/user/user_profile_screen.dart';
@@ -75,7 +76,12 @@ class UserHomeScreen extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            button(() {}, 'Apply for Leave', context),
+            button(() {
+              applyForLeave(
+                'leave',
+                context,
+              );
+            }, 'Apply for Leave', context),
           ],
         ),
       ),
