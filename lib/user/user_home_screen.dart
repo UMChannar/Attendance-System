@@ -1,4 +1,3 @@
-import 'package:attendence_management/auth/auth.dart';
 import 'package:attendence_management/storage/apply_for_leave_user.dart';
 import 'package:attendence_management/storage/mark_attendance_user.dart';
 import 'package:attendence_management/user/user_attendance_view_screen.dart';
