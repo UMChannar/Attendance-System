@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-Future<void> markAttendece(String atten, BuildContext context) async {
+Future<void> Attendece(String atten, BuildContext context) async {
   final user = FirebaseAuth.instance.currentUser;
   if (user == null) {
     return;
@@ -38,5 +38,19 @@ Future<void> markAttendece(String atten, BuildContext context) async {
         ),
       );
     }
+  }
+}
+
+Future<void> markAttendence(String atten, BuildContext context) async {
+  try {
+    await Attendece(atten, context);
+  } on FirebaseException catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        duration: const Duration(seconds: 1),
+        content: Text(e.message!),
+      ),
+    );
+    Navigator.pop(context);
   }
 }

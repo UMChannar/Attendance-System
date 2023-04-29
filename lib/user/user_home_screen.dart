@@ -1,4 +1,5 @@
 import 'package:attendence_management/auth/auth.dart';
+import 'package:attendence_management/storage/mark_attendance_user.dart';
 import 'package:attendence_management/user/user_profile_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -55,7 +56,12 @@ class UserHomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            button(() {}, 'Mark Attendance', context),
+            button(() {
+              markAttendence(
+                'Present',
+                context,
+              );
+            }, 'Mark Attendance', context),
             const SizedBox(
               height: 10,
             ),
