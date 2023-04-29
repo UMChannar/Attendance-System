@@ -13,16 +13,28 @@ class AdminHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Admin Works'),
-      ),
-      body: Center(
-          child: ElevatedButton(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           signOut(context);
         },
-        child: Text('SignOut'),
-      )),
+        label: Text(
+          'SignOut',
+          style: Theme.of(context).textTheme.bodyMedium,
+        ),
+        icon: const Icon(Icons.logout),
+      ),
+      appBar: AppBar(
+        title: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            'Admin',
+            style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  fontSize: 30,
+                ),
+          ),
+        ),
+      ),
     );
   }
 }
