@@ -7,8 +7,21 @@ class UserHomeScreen extends StatelessWidget {
 
   const UserHomeScreen({Key? key}) : super(key: key);
 
-  Future<void> signOut(BuildContext context) async {
-    await Auth().signOut(context);
+  Widget button(VoidCallback func, String text, BuildContext context) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+      ),
+      onPressed: func,
+      child: Text(
+        text,
+        style: Theme.of(context).textTheme.labelMedium!.copyWith(
+              fontWeight: FontWeight.bold,
+            ),
+      ),
+    );
   }
 
   @override
@@ -39,11 +52,19 @@ class UserHomeScreen extends StatelessWidget {
         ),
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            signOut(context);
-          },
-          child: Text('SignOut'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            button(() {}, 'Mark Attendance', context),
+            const SizedBox(
+              height: 10,
+            ),
+            button(() {}, 'View Your Attendance', context),
+            const SizedBox(
+              height: 10,
+            ),
+            button(() {}, 'Apply for Leave', context),
+          ],
         ),
       ),
     );
