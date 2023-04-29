@@ -1,5 +1,6 @@
 import 'package:attendence_management/auth/auth.dart';
 import 'package:attendence_management/storage/mark_attendance_user.dart';
+import 'package:attendence_management/user/user_attendance_view_screen.dart';
 import 'package:attendence_management/user/user_profile_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -65,7 +66,12 @@ class UserHomeScreen extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            button(() {}, 'View Your Attendance', context),
+            button(() {
+              Navigator.pushNamed(
+                context,
+                ViewAttendanceUser.routeName,
+              );
+            }, 'View Your Attendance', context),
             const SizedBox(
               height: 10,
             ),

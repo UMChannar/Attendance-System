@@ -3,6 +3,7 @@ import 'package:attendence_management/common/login_screen.dart';
 import 'package:attendence_management/common/registration_screen.dart';
 import 'package:attendence_management/initializing/auth_screen.dart';
 import 'package:attendence_management/initializing/is_loggedin.dart';
+import 'package:attendence_management/user/user_attendance_view_screen.dart';
 import 'package:attendence_management/user/user_home_screen.dart';
 import 'package:attendence_management/user/user_profile_screen.dart';
 import 'package:flutter/material.dart';
@@ -15,4 +16,5 @@ var customRoutes = <String, WidgetBuilder>{
   LoginScreen.routeName: (context) => const LoginScreen(),
   IsLoggedIn.routeName: (context) => const IsLoggedIn(),
   ProfileScreen.routeName: (context) => const ProfileScreen(),
+  ViewAttendanceUser.routeName: (context) => const ViewAttendanceUser(),
 };
