@@ -1,5 +1,5 @@
+import 'package:attendence_management/admin/admin_user_attendance_details_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 FutureBuilder<QuerySnapshot<Map<String, dynamic>>> userRecord() {
@@ -65,7 +65,13 @@ Widget dataTable(List<QueryDocumentSnapshot<Map<String, dynamic>>> docs,
           return DataRow(cells: [
             DataCell(
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    AdminUserAttenDetailsScreen.routeName,
+                    arguments: uid,
+                  );
+                },
                 child: Text(
                   name,
                   style: Theme.of(context).textTheme.bodyMedium,

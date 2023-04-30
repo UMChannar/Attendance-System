@@ -1,4 +1,5 @@
 import 'package:attendence_management/admin/admin_home_screen.dart';
+import 'package:attendence_management/admin/admin_user_attendance_details_screen.dart';
 import 'package:attendence_management/common/login_screen.dart';
 import 'package:attendence_management/common/registration_screen.dart';
 import 'package:attendence_management/initializing/auth_screen.dart';
@@ -17,4 +18,6 @@ var customRoutes = <String, WidgetBuilder>{
   IsLoggedIn.routeName: (context) => const IsLoggedIn(),
   ProfileScreen.routeName: (context) => const ProfileScreen(),
   ViewAttendanceUser.routeName: (context) => const ViewAttendanceUser(),
+  AdminUserAttenDetailsScreen.routeName: (context) =>
+      const AdminUserAttenDetailsScreen(),
 };
