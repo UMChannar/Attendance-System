@@ -1,4 +1,4 @@
-import 'package:attendence_management/admin/admin_user_attendance_details_screen.dart';
+import 'package:attendence_management/admin/admin_user_details_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
@@ -68,7 +68,7 @@ Widget dataTable(List<QueryDocumentSnapshot<Map<String, dynamic>>> docs,
                 onTap: () {
                   Navigator.pushNamed(
                     context,
-                    AdminUserAttenDetailsScreen.routeName,
+                    AdminUserDetailsScreen.routeName,
                     arguments: uid,
                   );
                 },

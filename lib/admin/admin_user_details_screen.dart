@@ -1,18 +1,17 @@
+import 'package:attendence_management/admin/admin_user_atten_screen.dart';
 import 'package:attendence_management/storage/attendance_record_admin.dart';
 import 'package:flutter/material.dart';
 
-class AdminUserAttenDetailsScreen extends StatefulWidget {
+class AdminUserDetailsScreen extends StatefulWidget {
   static String routeName = '/adminUserDetailsScreen';
 
-  const AdminUserAttenDetailsScreen({Key? key}) : super(key: key);
+  const AdminUserDetailsScreen({Key? key}) : super(key: key);
 
   @override
-  State<AdminUserAttenDetailsScreen> createState() =>
-      _AdminUserAttenDetailsScreenState();
+  State<AdminUserDetailsScreen> createState() => _AdminUserDetailsScreenState();
 }
 
-class _AdminUserAttenDetailsScreenState
-    extends State<AdminUserAttenDetailsScreen> {
+class _AdminUserDetailsScreenState extends State<AdminUserDetailsScreen> {
   Widget button(VoidCallback func, String text, BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
@@ -32,21 +31,36 @@ class _AdminUserAttenDetailsScreenState
 
   @override
   Widget build(BuildContext context) {
-    final args = ModalRoute.of(context)?.settings.arguments as String;
+    String args = ModalRoute.of(context)!.settings.arguments.toString();
 
     return Scaffold(
       appBar: AppBar(
         title: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
-            'User Details Screen',
+            'User Details',
             style: Theme.of(context).textTheme.titleLarge!.copyWith(
                   fontSize: 30,
                 ),
           ),
         ),
       ),
-      body: viewAttendanceRecord(args),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            button(() {
+              Navigator.pushNamed(
+                context,
+                AdminViewAttendanceUser.routeName,
+                arguments: args,
+              );
+            }, 'Attendance record', context),
+            button(() {}, 'Leave Status', context),
+            button(() {}, 'Delete User', context),
+          ],
+        ),
+      ),
     );
   }
 }

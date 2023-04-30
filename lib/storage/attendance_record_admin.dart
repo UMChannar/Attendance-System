@@ -31,7 +31,7 @@ StreamBuilder<QuerySnapshot<Map<String, dynamic>>> viewAttendanceRecord(
   );
 }
 
-Center newMethod1(List<QueryDocumentSnapshot<Map<String, dynamic>>> docs) {
+Widget newMethod1(List<QueryDocumentSnapshot<Map<String, dynamic>>> docs) {
   return Center(
     child: DataTable(
       columns: const [
