@@ -9,7 +9,10 @@ StreamBuilder<QuerySnapshot<Map<String, dynamic>>> viewAttendance() {
   if (user != null) {
     final userRef =
         FirebaseFirestore.instance.collection('users').doc(user.uid);
-    attendanceStream = userRef.collection('attendances').snapshots();
+    attendanceStream = userRef
+        .collection('attendances')
+        .orderBy('date', descending: false)
+        .snapshots();
   } else {
     attendanceStream = const Stream.empty();
   }

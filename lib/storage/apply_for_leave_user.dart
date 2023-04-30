@@ -22,9 +22,13 @@ Future<void> applyLeave(String leave, BuildContext context) async {
         .where('date', isEqualTo: currentDate)
         .where('Leave', isEqualTo: 'leave')
         .get();
+    final leaveRejectedQuery = await leaveRef
+        .where('date', isEqualTo: currentDate)
+        .where('Leave', isEqualTo: 'Rejected')
+        .get();
     if (leaveQuery.docs.isNotEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text('Leave Accepted'),
           duration: Duration(seconds: 1),
         ),
@@ -32,8 +36,16 @@ Future<void> applyLeave(String leave, BuildContext context) async {
       return;
     } else if (leaveNotQuery.docs.isNotEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text('Already Applied for leave'),
+          duration: Duration(seconds: 1),
+        ),
+      );
+      return;
+    } else if (leaveRejectedQuery.docs.isNotEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Leave not Guranted'),
           duration: Duration(seconds: 1),
         ),
       );
@@ -46,7 +58,7 @@ Future<void> applyLeave(String leave, BuildContext context) async {
         },
       );
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text('Applied For Leave'),
           duration: Duration(seconds: 1),
         ),
