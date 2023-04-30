@@ -1,4 +1,5 @@
 import 'package:attendence_management/auth/auth.dart';
+import 'package:attendence_management/storage/user_record_admin.dart';
 import 'package:flutter/material.dart';
 
 class AdminHomeScreen extends StatelessWidget {
@@ -35,6 +36,7 @@ class AdminHomeScreen extends StatelessWidget {
           ),
         ),
       ),
+      body: userRecord(),
     );
   }
 }
