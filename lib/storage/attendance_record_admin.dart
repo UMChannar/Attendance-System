@@ -32,30 +32,33 @@ StreamBuilder<QuerySnapshot<Map<String, dynamic>>> viewAttendanceRecord(
 }
 
 Widget newMethod1(List<QueryDocumentSnapshot<Map<String, dynamic>>> docs) {
-  return Center(
-    child: DataTable(
-      columns: const [
-        DataColumn(
-          label: Text(
-            'Date',
-            style: TextStyle(fontStyle: FontStyle.italic),
+  return SingleChildScrollView(
+    child: Center(
+      child: DataTable(
+        columnSpacing: 80,
+        columns: const [
+          DataColumn(
+            label: Text(
+              'Date',
+              style: TextStyle(fontStyle: FontStyle.italic),
+            ),
           ),
-        ),
-        DataColumn(
-          label: Text(
-            'Attendance',
-            style: TextStyle(fontStyle: FontStyle.italic),
+          DataColumn(
+            label: Text(
+              'Attendance',
+              style: TextStyle(fontStyle: FontStyle.italic),
+            ),
           ),
-        ),
-      ],
-      rows: docs
-          .map((doc) => DataRow(
-                cells: <DataCell>[
-                  DataCell(Text(doc['date'])),
-                  DataCell(Text(doc['attendance'])),
-                ],
-              ))
-          .toList(),
+        ],
+        rows: docs
+            .map((doc) => DataRow(
+                  cells: <DataCell>[
+                    DataCell(Text(doc['date'])),
+                    DataCell(Text(doc['attendance'])),
+                  ],
+                ))
+            .toList(),
+      ),
     ),
   );
 }
