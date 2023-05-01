@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Attendence App',
       theme: ThemeData(
+        scaffoldBackgroundColor: Colors.blueGrey[100],
         colorScheme:
             ColorScheme.fromSwatch(primarySwatch: Colors.lightBlue).copyWith(
           secondary: Colors.lightBlueAccent,
