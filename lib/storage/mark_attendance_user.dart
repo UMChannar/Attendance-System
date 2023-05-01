@@ -18,7 +18,7 @@ Future<void> Attendece(String atten, BuildContext context) async {
         await attendanceRef.where('date', isEqualTo: currentDate).get();
     if (attendanceQuery.docs.isNotEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text('Attendance Already Marked'),
           duration: Duration(seconds: 1),
         ),
@@ -32,7 +32,7 @@ Future<void> Attendece(String atten, BuildContext context) async {
         },
       );
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text('Attendance Marked'),
           duration: Duration(seconds: 1),
         ),

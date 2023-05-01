@@ -1,5 +1,6 @@
 import 'package:attendence_management/admin/admin_user_atten_screen.dart';
 import 'package:attendence_management/storage/attendance_record_admin.dart';
+import 'package:attendence_management/storage/user_leave_admin.dart';
 import 'package:flutter/material.dart';
 
 class AdminUserDetailsScreen extends StatefulWidget {
@@ -56,7 +57,13 @@ class _AdminUserDetailsScreenState extends State<AdminUserDetailsScreen> {
                 arguments: args,
               );
             }, 'Attendance record', context),
-            button(() {}, 'Leave Status', context),
+            button(() {
+              decisionForLeave(
+                'leave',
+                context,
+                args,
+              );
+            }, 'Leave Status', context),
             button(() {}, 'Delete User', context),
           ],
         ),
